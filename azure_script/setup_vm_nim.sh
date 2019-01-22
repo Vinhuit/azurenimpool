@@ -14,6 +14,6 @@ let donation*=10
 for i in `seq 1 4`;
 do
     cd beepminer-0.3.4
-    sudo timeout 1000m ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id ----architecture=sandybridge
+    sudo timeout 1000m ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge
 done
 
