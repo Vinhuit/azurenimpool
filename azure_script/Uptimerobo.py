@@ -168,7 +168,9 @@ print("""
 def main(n=1):
 	#n = int(input('Please enter the number: '))
 	if n==1:
-		#os.system("notepad accounts.txt")
+		SimpleMonitor()
+		Compare()
+		os.system("notepad accounts.txt")
 		f = open("accounts.txt", "rt")
 		for pool in f:
 			print("Start rerun "+pool)
@@ -191,5 +193,8 @@ def main(n=1):
 		SimpleMonitor()
 		Compare()
 		#os.system("notepad accounts.txt")	
-main(5)
-main(1)
+		
+schedule.every(30).minutes.do(main)
+while 1:
+    schedule.run_pending()
+    time.sleep(1)
