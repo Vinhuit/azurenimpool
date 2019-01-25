@@ -10,7 +10,7 @@ import requests
 from requests.exceptions import ConnectionError
 import subprocess
 import threading
-
+import schedule
 def RefreshAccount(pool):
 		print("Start Rerun "+pool)
 		reqRm = 'http://'+pool+'.herokuapp.com/custom?link=pkill+bash%3Bpkill+miner&key=&lach='
