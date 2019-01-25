@@ -33,14 +33,14 @@ def MultiRequest(urls):
 		threads.append(process)
 		for process in threads:
    			process.join()
-def Compare():
-	with open('offline.txt', 'r') as file1:
-		with open('online.txt', 'r') as file2:
-			same = set(file1).symmetric_difference(file2)
+def Compare(f1,f2,f3):
+	with open(f1, 'r') as file1:
+		with open(f2, 'r') as file2:
+			same = set(file1).difference(file2)
 
 	same.discard('\n')
 	list(set(same))
-	with open('accounts.txt', 'w') as file_out:
+	with open(f3, 'w') as file_out:
 		for line in sorted(same):
 			file_out.write(line)
 			
@@ -175,7 +175,8 @@ def main(n=1):
 	#n = int(input('Please enter the number: '))
 	if n==1:
 		SimpleMonitor()
-		Compare()
+		Compare('offline.txt','online.txt','temp.txt')
+		Compare('temp.txt','online.txt','accounts.txt')
 		os.system("notepad accounts.txt")
 		f = open("accounts.txt", "rt")
 		for pool in f:
@@ -198,6 +199,8 @@ def main(n=1):
 		CreateHeroku()
 	else:
 		SimpleMonitor()
+		Compare('offline.txt','online.txt','temp.txt')
+		Compare('temp.txt','online.txt','accounts.txt')
 		Compare()
 		#os.system("notepad accounts.txt")
 
