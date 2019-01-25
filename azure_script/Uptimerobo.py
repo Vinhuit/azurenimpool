@@ -184,6 +184,7 @@ def main(n=1):
 			t=threading.Thread(target=RefreshAccount,args=(pool,))
 			t.daemon = True
 			t.start()
+			t.join()
 		#MultiRequest(f)
 		#RefreshAccount(f)
 	elif n==2:
