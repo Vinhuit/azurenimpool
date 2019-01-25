@@ -102,11 +102,11 @@ def json_address_for_sushi():
 	url_sushi = sushi_pool_connect+new_string_sushi
 	return url_sushi
 def WalletStatus():
-    url_wallet = json_address_for_nimiq_core()
-    nimiq_core = requests.get(url_wallet).json()
-    wallet_state = nimiq_core['balance']
-    balance_formatted = format(wallet_state/100000,'.2f')
-    return balance_formatted
+	url_wallet = json_address_for_sushi()
+	nimiq_core = requests.get(url_wallet).json()
+	wallet_state = nimiq_core['wallet_balance']
+	balance_formatted = format(wallet_state/100000,'.2f')
+	return balance_formatted
 def sort_by_name(d):
     '''a helper function for sorting'''
     return d['name']
@@ -177,7 +177,7 @@ def main(n=1):
 		SimpleMonitor()
 		Compare('offline.txt','online.txt','temp.txt')
 		Compare('temp.txt','online.txt','accounts.txt')
-		os.system("notepad accounts.txt")
+		#os.system("notepad accounts.txt")
 		f = open("accounts.txt", "rt")
 		for pool in f:
 			send_mess("Start rerun "+pool)
@@ -186,6 +186,7 @@ def main(n=1):
 			t.daemon = True
 			t.start()
 			t.join()
+		send_mess("Wallet Balance: "+str(WalletStatus()))
 		#MultiRequest(f)
 		#RefreshAccount(f)
 	elif n==2:
