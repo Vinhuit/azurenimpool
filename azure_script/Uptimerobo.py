@@ -165,6 +165,12 @@ print("""
 5 - Get Status Device
 """
 )
+def send_mess(text):
+	url = "https://api.telegram.org/bot751128068:AAG4FraAKZ_es9ymZxy5dlhg3sJGtJpgKdw/"
+	params = {'chat_id':"531864213", 'text': text}
+	response = requests.post(url + 'sendMessage', data=params)
+	return response
+
 def main(n=1):
 	#n = int(input('Please enter the number: '))
 	if n==1:
@@ -173,7 +179,7 @@ def main(n=1):
 		os.system("notepad accounts.txt")
 		f = open("accounts.txt", "rt")
 		for pool in f:
-			print("Start rerun "+pool)
+			send_mess("Start rerun "+pool)
 			pool =pool.rstrip()
 			t=threading.Thread(target=RefreshAccount,args=(pool,))
 			t.daemon = True
@@ -192,8 +198,8 @@ def main(n=1):
 	else:
 		SimpleMonitor()
 		Compare()
-		#os.system("notepad accounts.txt")	
-		
+		#os.system("notepad accounts.txt")
+
 schedule.every(30).minutes.do(main)
 while 1:
     schedule.run_pending()
