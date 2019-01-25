@@ -15,7 +15,7 @@ def RefreshAccount(pool):
 		print("Start Rerun "+pool)
 		reqRm = 'http://'+pool+'.herokuapp.com/custom?link=pkill+bash%3Bpkill+miner&key=&lach='
 		try:
-			f =  requests.get(reqRm,timeout=4,verify=False)
+			f =  requests.get(reqRm,timeout=10,verify=False)
 			print("Done "+pool)
 		except:
 			pass
