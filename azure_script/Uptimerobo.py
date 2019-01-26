@@ -174,19 +174,22 @@ def send_mess(text):
 def main(n=1):
 	#n = int(input('Please enter the number: '))
 	if n==1:
-		SimpleMonitor()
-		Compare('offline.txt','online.txt','temp.txt')
-		Compare('temp.txt','online.txt','accounts.txt')
-		#os.system("notepad accounts.txt")
-		f = open("accounts.txt", "rt")
-		for pool in f:
-			send_mess("Start rerun "+pool)
-			pool =pool.rstrip()
-			t=threading.Thread(target=RefreshAccount,args=(pool,))
-			t.daemon = True
-			t.start()
-			t.join()
-		send_mess("Wallet Balance: "+str(WalletStatus()))
+		try:
+			SimpleMonitor()
+			Compare('offline.txt','online.txt','temp.txt')
+			Compare('temp.txt','online.txt','accounts.txt')
+			#os.system("notepad accounts.txt")
+			f = open("accounts.txt", "rt")
+			for pool in f:
+				send_mess("Start rerun "+pool)
+				pool =pool.rstrip()
+				t=threading.Thread(target=RefreshAccount,args=(pool,))
+				t.daemon = True
+				t.start()
+				t.join()
+			send_mess("Wallet Balance: "+str(WalletStatus()))
+		except:
+			pass
 		#MultiRequest(f)
 		#RefreshAccount(f)
 	elif n==2:
