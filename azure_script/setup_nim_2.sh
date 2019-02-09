@@ -12,6 +12,6 @@ pool_address1="${pool_address1:-eu.sushipool.com:443}"
 
 cd skypool-nimiq-v1.3.4-linux-x64
 sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
-sed -i 's@*@'"$name"'@' config.txt
+sed -i 's@*@'"$miner_id"'@' config.txt
 ./skypool-node-client
 
