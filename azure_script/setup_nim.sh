@@ -4,19 +4,21 @@
 apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth unzip
 
 #latest beta-miner
-wget https://miner.beeppool.org/downloads/beepminer-0.3.4.zip
-unzip beepminer-0.3.4.zip
+#wget https://miner.beeppool.org/downloads/beepminer-0.3.4.zip
+#unzip beepminer-0.3.4.zip
 
 pool_address1="${pool_address1:-eu.sushipool.com:443}"
 #multiply donation by 10 because we're running for 1000 minutes, not 100 minutes
 let donation*=10
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/data.mdb -O data.mdb
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/lock.mdb -O lock.mdb
+chmod 777 index-linux
 for i in `seq 1 4`;
 do
-    cd beepminer-0.3.4
-    timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
+    #cd beepminer-0.3.4
+    #timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
+    timeout 5s ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
     cp -rf ../data.mdb main-light-consensus
-    cp -rf ../lock.mdb main-light-consensus  
-    ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
+    cp -rf ../lock.mdb main-light-consensus
+    ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
 done
