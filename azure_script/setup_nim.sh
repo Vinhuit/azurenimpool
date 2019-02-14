@@ -18,7 +18,7 @@ do
     #cd beepminer-0.3.4
     #timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
     timeout 5s ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
-    cp -rf ../data.mdb main-light-consensus
-    cp -rf ../lock.mdb main-light-consensus
+    cp -rf data.mdb main-light-consensus
+    cp -rf lock.mdb main-light-consensus
     ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
 done
