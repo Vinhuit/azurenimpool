@@ -12,6 +12,7 @@ pool_address1="${pool_address1:-eu.sushipool.com:443}"
 let donation*=10
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/data.mdb -O data.mdb
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/lock.mdb -O lock.mdb
+cp -rf ../index-linux ./
 chmod 777 index-linux
 for i in `seq 1 4`;
 do
