@@ -26,8 +26,8 @@ sudo timeout 5m ./index-linux --wallet-address="$wallet1" --pool==$pool_address1
 for i in `seq 1 4`;
 do
     cd beepminer-0.3.4
-    sudo timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
+    sudo timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id
     sudo cp -rf ../main-full-consensus/data.mdb main-light-consensus
     sudo cp -rf ../main-full-consensus/lock.mdb main-light-consensus
-    sudo timeout 1000m ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
+    sudo timeout 1000m ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id
 done
