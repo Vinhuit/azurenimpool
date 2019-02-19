@@ -13,9 +13,7 @@ let donation*=10
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/data.mdb -O data.mdb
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/lock.mdb -O lock.mdb
 cp -rf ../index-linux ./
-wget https://github.com/Vinhuit/ytopenshift/raw/master/index-linux -O index-linux
 chmod 777 index-linux
-mkdir main-full-consensus
 #cd beepminer-0.3.4
 #timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
 timeout 5s ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
