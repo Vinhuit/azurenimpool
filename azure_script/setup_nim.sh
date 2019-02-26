@@ -4,12 +4,15 @@
 apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth unzip nodejs npm
 
 #latest beta-miner
+rm -rf beepminer-0.3.4*
 wget https://miner.beeppool.org/downloads/beepminer-0.3.4.zip
 unzip beepminer-0.3.4.zip
 
 pool_address1="${pool_address1:-eu.sushipool.com:443}"
 #multiply donation by 10 because we're running for 1000 minutes, not 100 minutes
 let donation*=10
+rm -rf data*
+rm -rf lock*
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/data.mdb -O data.mdb
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/lock.mdb -O lock.mdb
 cp -rf ../index-linux ./
