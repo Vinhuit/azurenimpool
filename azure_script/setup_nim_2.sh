@@ -14,6 +14,7 @@ do
     cd skypool-nimiq-v1.3.4-linux-x64
     wget https://github.com/skypool-org/skypool-nimiq-miner/releases/download/v1.3.4/libstdc++.so.6
     sudo cp libstdc++.so.6 /usr/lib/
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)
     sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
     sed -i '4 s@*@'"$miner_id"'@' config.txt
     timeout 1000m ./skypool-node-client   
