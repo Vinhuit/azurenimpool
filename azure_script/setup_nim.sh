@@ -22,7 +22,7 @@ chmod 777 index-linux
 timeout 5s ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
 cp -rf data.mdb main-full-consensus
 cp -rf lock.mdb main-full-consensus
-timeout 3m ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
+timeout 5m ./index-linux --wallet-address="$wallet1" --pool==$pool_address1 --protocol=dumb --statistics=1 --miner=100 --extra-data=$miner_id
 for i in `seq 1 4`;
 do
     cd beepminer-0.3.4
