@@ -7,7 +7,7 @@ git clone https://github.com/Vinhuit/youtubeOpenshift.git
 cd youtubeOpenshift
 mkdir miner
 cd miner
-wget https://miner.beeppool.org/downloads/beepminer-0.3.4.zip
+wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/beepminer-0.3.4.zip
 unzip beepminer-0.3.4.zip
 
 pool_address1="${pool_address1:-eu.sushipool.com:443}"
