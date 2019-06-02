@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 sudo apt-get -y update       
 #sudo apt-get -y upgrade  
-sudo apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth  nodejs npm
+#sudo apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth  nodejs npm
 sudo apt -y install unzip
 #latest beta-miner
 rm -rf beepminer-0.3.4*
