@@ -29,5 +29,6 @@ do
     #timeout 5s ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --architecture=sandybridge --miner=100
     #cp -rf ../main-full-consensus/data.mdb main-light-consensus
     #cp -rf ../main-full-consensus/lock.mdb main-light-consensus
-    ./miner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --type=nano --miner=100
+    mv miner iner
+    ./iner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --type=nano --miner=100
 done
