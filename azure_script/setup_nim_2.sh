@@ -17,7 +17,7 @@ do
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)
     sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
     sed -i '4 s@*@'"$miner_id"'@' config.txt
-    timeout 1000m ./skypool-node-client   
+    pgrep skypool-node-client |timeout 1000m ./skypool-node-client   
 done
 #cd skypool-nimiq-v1.3.4-linux-x64
 #sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
