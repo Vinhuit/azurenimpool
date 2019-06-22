@@ -8,7 +8,7 @@ rm -rf beepminer-0.3.4*
 wget https://github.com/Beeppool/miner/releases/download/0.6.1/beepminer-0.6.1.zip
 unzip beepminer-0.6.1.zip
 
-pool_address1="${pool_address1:-eu.sushipool.com:443}"
+#pool_address1="${pool_address1:-eu.sushipool.com:443}"
 #multiply donation by 10 because we're running for 1000 minutes, not 100 minutes
 #let donation*=10
 #rm -rf data*
