@@ -13,7 +13,7 @@ pool_address1="${pool_address1:-eu.sushipool.com:443}"
 for i in `seq 1 4`;
 do
     cd skypool-nimiq-v1.3.4-linux-x64
-    wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/libstdc++.so.6
+    #wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/libstdc++.so.6
     #curl -O https://github.com/skypool-org/skypool-nimiq-miner/releases/download/v1.3.4/libstdc++.so.6
     #sudo cp libstdc++.so.6 /usr/lib/
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)
