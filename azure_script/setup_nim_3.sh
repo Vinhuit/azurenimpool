@@ -4,7 +4,7 @@ sudo apt-get -y update
 #sudo apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth  nodejs npm
 sudo apt -y install unzip
 #latest beta-miner
-rm -rf beepminer-0.3.4*
+rm -rf beepminer*
 wget https://github.com/Beeppool/miner/releases/download/0.6.1/beepminer-0.6.1.zip
 unzip beepminer-0.6.1.zip
 
