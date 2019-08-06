@@ -30,5 +30,5 @@ do
     #cp -rf ../main-full-consensus/data.mdb main-light-consensus
     #cp -rf ../main-full-consensus/lock.mdb main-light-consensus
     mv miner iner
-    pgrep iner || ./iner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --type=nano
+    pgrep iner || ./iner --wallet-address="$wallet1" --pool=$pool_address1 --deviceLabel=$miner_id --type=dumb --miner=3 --in-memory
 done
