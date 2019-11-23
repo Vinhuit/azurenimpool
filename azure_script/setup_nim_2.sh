@@ -6,8 +6,8 @@
 #latest beta-miner
 sudo apt-get -y install unzip
 apt-get -y install unzip
-wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.zip
-unzip skypool-nimiq-v1.3.4-linux-x64.zip
+wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.tar.gz
+tar xvzf skypool-nimiq-v1.3.4-linux-x64.tar.gz
 
 pool_address1="${pool_address1:-eu.sushipool.com:443}"
 #multiply donation by 10 because we're running for 1000 minutes, not 100 minutes
