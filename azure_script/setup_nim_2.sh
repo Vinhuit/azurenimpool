@@ -4,8 +4,8 @@
 #sudo apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth unzip
 
 #latest beta-miner
-sudo apt-get -y install unzip
-apt-get -y install unzip
+#sudo apt-get -y install unzip
+#apt-get -y install unzip
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.tar.gz
 tar xvzf skypool-nimiq-v1.3.4-linux-x64.tar.gz
 
