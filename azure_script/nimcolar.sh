@@ -1,6 +1,6 @@
 pkill chisel
 curl https://i.jpillora.com/chisel! | bash 
-chisel client --keepalive 90m  https://$1.herokuapp.com 9050:socks &
+./chisel client --keepalive 90m  https://$1.herokuapp.com 9050:socks &
 apt install proxychains
 sed -i 's/socks4/socks5/g'  /etc/proxychains.conf
 sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
