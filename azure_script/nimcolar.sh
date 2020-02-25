@@ -9,6 +9,7 @@ if [[ -f "chisel" ]]; then
   ./chisel client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
 else 
   chisel client --keepalive 90m  $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
+fi
 apt install proxychains
 wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/pchain.conf -O pchain.conf
 cp -rf pchain.conf /etc/proxychains.conf
