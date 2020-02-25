@@ -15,6 +15,7 @@ sed -i "s/9051/${port2}/g"  /etc/proxychains.conf
 sed -i "s/9052/${port3}/g"  /etc/proxychains.conf
 sed -i "s/9053/${port4}/g"  /etc/proxychains.conf
 sed -i "s/9054/${port5}/g"  /etc/proxychains.conf
+sleep 10
 #sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
 sudo proxychains curl ifconfig.me
 wget https://github.com/tomkha/nq-miner/releases/download/0.99.6/nq-miner-linux-0.99.6.tar.gz && tar xvzf nq-miner-linux-0.99.6.tar.gz
