@@ -1,6 +1,7 @@
 pkill chisel
 curl https://i.jpillora.com/chisel! | bash 
-chisel client --keepalive 90m  https://$1.herokuapp.com 9050:socks 9051:socks 9052:socks 9053:socks 9054:socks&
+./chisel client --keepalive 90m  https://$1.herokuapp.com 9050:socks 9051:socks 9052:socks 9053:socks 9054:socks&
+pgrep -x "chisel" || chisel client --keepalive 90m  https://$1.herokuapp.com 9050:socks 9051:socks 9052:socks 9053:socks 9054:socks&
 apt install proxychains
 wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/pchain.conf -O pchain.conf
 cp -rf pchain.conf /etc/proxychains.conf
