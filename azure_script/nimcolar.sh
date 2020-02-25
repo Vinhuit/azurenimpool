@@ -1,10 +1,10 @@
 pkill chisel
 curl https://i.jpillora.com/chisel! | bash 
-port1 =$RANDOM
-port2 =$RANDOM
-port3 =$RANDOM
-port4 =$RANDOM
-port5 =$RANDOM
+port1=$RANDOM
+port2=$RANDOM
+port3=$RANDOM
+port4=$RANDOM
+port5=$RANDOM
 ./chisel client --keepalive 90m  https://$1.herokuapp.com $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
 pgrep -x "chisel" || chisel client --keepalive 90m  https://$1.herokuapp.com $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
 apt install proxychains
