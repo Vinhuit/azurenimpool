@@ -1,15 +1,12 @@
 pkill chisel
-curl https://i.jpillora.com/chisel! | bash 
+wget https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz -O chisel_linux_amd64.gz
+y | gunzip "chisel_linux_amd64.gz"  && chmod 777 chisel_linux_amd64
 port1=$RANDOM
 port2=$RANDOM
 port3=$RANDOM
 port4=$RANDOM
 port5=$RANDOM
-if [[ -f "chisel" ]]; then
-  ./chisel client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
-else 
-  chisel client --keepalive 90m  $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
-fi
+./chisel_linux_amd64 client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks&
 apt install proxychains
 wget https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/pchain.conf -O pchain.conf
 cp -rf pchain.conf /etc/proxychains.conf
