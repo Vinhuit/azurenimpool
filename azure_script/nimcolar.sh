@@ -1,6 +1,6 @@
 curl https://raw.githubusercontent.com/kadwanev/retry/master/retry -o /usr/local/bin/retry && chmod +x /usr/local/bin/retry
 wget -q https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/chiselport.sh -O chiselport.sh && chmod 777 chiselport.sh
-retry "timeout 2h bash -c './chiselport.sh nimchain--moviescloud.repl.co &'"
+retry "timeout 2h bash -c './chiselport.sh $1 &'"
 sleep 10
 #sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
 sudo proxychains curl ifconfig.me
