@@ -1,5 +1,5 @@
 pkill chisel
-rm -rf *
+rm -rf wget-log*
 wget -q https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz -O chisel_linux_amd64.gz
 #gunzip "chisel_linux_amd64.gz"  && chmod 777 chisel_linux_amd64
 [[ -e "chisel_linux_amd64" ]] || gunzip "chisel_linux_amd64.gz"  && chmod 777 chisel_linux_amd64
