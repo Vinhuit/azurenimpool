@@ -8,7 +8,7 @@ port2=$RANDOM
 port3=$RANDOM
 port4=$RANDOM
 port5=$RANDOM
-./chisel_linux_amd64 client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks &
+./chisel_linux_amd64 client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks & >/dev/null
 apt install -y proxychains
 wget -q https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/pchain.conf -O pchain.conf
 cp -rf pchain.conf /etc/proxychains.conf
