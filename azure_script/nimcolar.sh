@@ -1,4 +1,3 @@
-
 #!/bin/bash
 pkill chisel
 rm -rf wget-log*
