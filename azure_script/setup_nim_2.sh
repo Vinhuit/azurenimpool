@@ -1,11 +1,27 @@
 #!/usr/bin/env bash
-#sudo apt-get -y update       
-#sudo apt-get -y upgrade  
-#sudo apt -y install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev leafpad git xauth unzip
-
-#latest beta-miner
-#sudo apt-get -y install unzip
-#apt-get -y install unzip
+sudo apt-get -y update       
+pkill chisel
+rm -rf wget-log*
+wget -q https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz -O chisel_linux_amd64.gz
+#gunzip "chisel_linux_amd64.gz"  && chmod 777 chisel_linux_amd64
+[[ -e "chisel_linux_amd64" ]] || gunzip "chisel_linux_amd64.gz"  && chmod 777 chisel_linux_amd64
+port1=$RANDOM
+port2=$RANDOM
+port3=$RANDOM
+port4=$RANDOM
+port5=$RANDOM
+./chisel_linux_amd64 client --keepalive 90m $1 $port1:socks $port2:socks $port3:socks $port4:socks $port5:socks & >/dev/null
+apt install -y proxychains unzip
+wget -q https://raw.githubusercontent.com/Vinhuit/azurenimpool/master/azure_script/pchain.conf -O pchain.conf
+cp -rf pchain.conf /etc/proxychains.conf
+sed -i "s/9050/${port1}/g"  /etc/proxychains.conf
+sed -i "s/9051/${port2}/g"  /etc/proxychains.conf
+sed -i "s/9052/${port3}/g"  /etc/proxychains.conf
+sed -i "s/9053/${port4}/g"  /etc/proxychains.conf
+sed -i "s/9054/${port5}/g"  /etc/proxychains.conf
+sleep 10
+#sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
+sudo proxychains curl ifconfig.me
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.tar.gz
 tar xvzf skypool-nimiq-v1.3.4-linux-x64.tar.gz
 
@@ -20,7 +36,7 @@ do
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$(pwd)
     sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
     sed -i '4 s@*@'"$miner_id"'@' config.txt
-    pgrep skypool-node-client ||timeout 1000m ./skypool-node-client   
+    pgrep skypool-node-client || sudo proxychains ./skypool-node-client   
 done
 #cd skypool-nimiq-v1.3.4-linux-x64
 #sed -i 's@NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8@'"$wallet1"'@' config.txt
