@@ -22,9 +22,11 @@ sed -i "s/9054/${port5}/g"  /etc/proxychains.conf
 sleep 10
 #sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
 sudo proxychains curl ifconfig.me
-wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.tar.gz
-tar xvzf skypool-nimiq-v1.3.4-linux-x64.tar.gz
-
+wget -q https://github.com/skypool-org/skypool-nimiq-miner/releases/download/v1.3.4/skypool-nimiq-gpu-v1.3.4-rc6-linux-x64.zip -O skypool-nimiq-gpu-v1.3.4-rc6-linux-x64.zip
+wget -q https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/skypool-nimiq-v1.3.4-linux-x64.tar.gz -O skypool-nimiq-v1.3.4-linux-x64.tar.gz
+#tar xvzf skypool-nimiq-v1.3.4-linux-x64.tar.gz
+unzip skypool-nimiq-gpu-v1.3.4-rc6-linux-x64.zip
+cp -rf skypool-nimiq-gpu-v1.3.4-rc6-linux-x64/* ./
 pool_address1="${pool_address1:-nginxserver001.herokuapp.com:443}"
 #multiply donation by 10 because we're running for 1000 minutes, not 100 minutes
 for i in `seq 1 4`;
