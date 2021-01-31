@@ -1,4 +1,6 @@
 REM Developer acrefawn. Contact me: t.me/acrefawn
+ECHO 
+C:\Users\TrangNgo\Downloads\PoshGram-1.14.0\PoshGram-1.14.0> powershell.exe -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (new-object net.webclient).DownloadString('https://api.telegram.org/bot1627764338:AAG4f3OrpP21UQaF7DircoDUhi2Gy0-aHDE/sendMessage?parse_mode=markdown&disable_notification=%~2&chat_id=-1001277940480&text=*aaaa:* BBB')"
 REM I recommend that you do not touch the options below unless you know what you are doing.
 @ECHO off
 SETLOCAL EnableExtensions EnableDelayedExpansion
