@@ -17,7 +17,7 @@ sed -i "s/9051/${port2}/g"  /etc/proxychains.conf
 sed -i "s/9052/${port3}/g"  /etc/proxychains.conf
 sed -i "s/9053/${port4}/g"  /etc/proxychains.conf
 sed -i "s/9054/${port5}/g"  /etc/proxychains.conf
-sleep 10
+#sleep 10
 #sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
 proxychains curl ifconfig.me
 name=$RANDOM
